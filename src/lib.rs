@@ -292,7 +292,7 @@ cfg_if! {
     } else if #[cfg(target_os = "fuchsia")] {
         mod fuchsia;
         pub use fuchsia::*;
-    } else if #[cfg(unix)] {
+    } else if #[cfg(any(target_os = "horizon", unix))] {
         mod unix;
         pub use unix::*;
     } else {
