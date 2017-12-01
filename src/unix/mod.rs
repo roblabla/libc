@@ -305,8 +305,8 @@ cfg_if! {
         #[link(name = "fdio")]
         extern {}
     } else if #[cfg(target_env = "newlib")] {
-        #[link(name = "c")]
-        #[link(name = "m")]
+        #[link(name = "c", kind = "static")]
+        #[link(name = "m", kind = "static")]
         extern {}
     } else {
         #[link(name = "c")]
