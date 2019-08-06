@@ -126,6 +126,13 @@ cfg_if! {
 
         mod vxworks;
         pub use vxworks::*;
+    }
+    else if #[cfg(target_os = "sunrise")] {
+        mod fixed_width_ints;
+        pub use fixed_width_ints::*;
+
+        mod sunrise;
+        pub use sunrise::*;
     } else if #[cfg(unix)] {
         mod fixed_width_ints;
         pub use fixed_width_ints::*;
